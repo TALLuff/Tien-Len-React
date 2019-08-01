@@ -6,10 +6,10 @@ class Home extends React.Component {
     return (
       <div>
         <Link to={`/tommy`}>
-          <button>Tommy - the best player</button>
+          <button>Tommy - skillful tien len master</button>
         </Link>
         <Link to={`/tina`}>
-          <button>Tina - runner up</button>
+          <button>Tina - ok at tien len</button>
         </Link>
       </div>
     );
