@@ -58,7 +58,7 @@ class App extends React.Component {
         .child(keys[i])
         .set(selected[keys[i]]);
     }
-    // this.passTurn();
+    this.passTurn();
   };
 
   componentDidMount() {
