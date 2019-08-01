@@ -58,7 +58,15 @@ class App extends React.Component {
         .child(keys[i])
         .set(selected[keys[i]]);
     }
-    this.passTurn();
+    if (this.state.playerTurn === "Tommy") {
+      db.child("game")
+        .child("playerTurn")
+        .set("Tina");
+    } else if (this.state.playerTurn === "Tina") {
+      db.child("game")
+        .child("playerTurn")
+        .set("Tommy");
+    }
   };
 
   componentDidMount() {
