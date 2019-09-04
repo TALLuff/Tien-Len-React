@@ -17,9 +17,6 @@ class App extends React.Component {
 
   playerWin = name => {
     alert(`${name} is the champion!!!`);
-    var db = firebase.database().ref();
-    db.child("tina").remove();
-    db.child("tommy").remove();
   };
 
   readyUp = name => {

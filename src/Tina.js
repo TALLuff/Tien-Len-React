@@ -36,7 +36,7 @@ class Tina extends React.Component {
       .on("value", snapshot => {
         if (snapshot.val() !== null) {
           this.setState({ hand: snapshot.val() });
-        } else {
+        } else if (this.props.started === true) {
           this.setState({ hand: ["win"] });
         }
       });
@@ -45,7 +45,7 @@ class Tina extends React.Component {
       .on("value", snapshot => {
         if (snapshot.val() !== null) {
           this.setState({ opponentHand: snapshot.val() });
-        } else {
+        } else if (this.props.started === true) {
           this.setState({ opponentHand: ["win"] });
         }
       });
@@ -54,7 +54,7 @@ class Tina extends React.Component {
   componentDidUpdate() {
     if (this.state.hand[0] === "win") {
       this.props.playerWin("Tina");
-    } else if (this.state.opponentHand.length === 0) {
+    } else if (this.state.opponentHand[0] === "win") {
       this.props.playerWin("Tommy");
     }
   }
